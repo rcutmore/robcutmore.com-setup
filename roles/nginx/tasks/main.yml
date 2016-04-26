@@ -4,11 +4,11 @@
   notify: start nginx
 
 - name: copy nginx configuration
-  template: src=default.conf dest=/etc/nginx/sites-available/robcutmore.conf
+  template: src=default.conf dest=/etc/nginx/sites-available/robcutmore.com.conf
 
 - name: setup nginx sites-enabled symlink
-  file: path=/etc/nginx/sites-enabled/robcutmore.conf
-        src=/etc/nginx/sites-available/robcutmore.conf
+  file: path=/etc/nginx/sites-enabled/robcutmore.com.conf
+        src=/etc/nginx/sites-available/robcutmore.com.conf
         state=link
         force=yes
   notify: reload nginx
