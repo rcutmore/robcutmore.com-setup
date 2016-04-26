@@ -1,0 +1,14 @@
+---
+- name: install nginx
+  apt: name=nginx state=present update_cache=yes
+  notify: start nginx
+
+- name: copy nginx configuration
+  template: src=default.conf dest=/etc/nginx/sites-available/robcutmore.conf
+
+- name: setup nginx sites-enabled symlink
+  file: path=/etc/nginx/sites-enabled/robcutmore.conf
+        src=/etc/nginx/sites-available/robcutmore.conf
+        state=link
+        force=yes
+  notify: reload nginx
