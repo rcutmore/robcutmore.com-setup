@@ -1,0 +1,30 @@
+---
+- name: install postgresql
+  apt: name={{ item }} state=present update_cache=true
+  with_items:
+    - postgresql
+    - postgresql-contrib
+    - libpq-dev
+    - python3-dev
+    - python-psycopg2
+  register: postgresql_installed
+  notify: start postgresql
+
+- name: create database
+  when: postgresql_installed|success
+  sudo_user: postgres
+  postgresql_db:
+    name={{ db_name }}
+    encoding='UTF-8'
+    state=present
+  register: database_created
+
+- name: create database user
+  when: database_created|success
+  sudo_user: postgres
+  postgresql_user:
+    db={{ db_name }}
+    name={{ db_user }}
+    password={{ db_password }}
+    priv=ALL
+    state=present
