@@ -1,0 +1,11 @@
+---
+git:
+  email: ENTER GIT EMAIL HERE
+  name: ENTER GIT NAME HERE
+  repo_location: /opt/robcutmore
+github:
+  address: https://github.com/rcutmore/robcutmore.com-ansible.git
+pip:
+  requirements_location: /opt/robcutmore/requirements.txt
+virtualenv:
+  location: /opt/robcutmore/env

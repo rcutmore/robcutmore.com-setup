@@ -1,0 +1,26 @@
+---
+- name: install project packages
+  apt: name={{ item }} state=present update_cache=true
+  with_items:
+    - git
+    - python-virtualenv
+  register: packages_installed
+
+- name: configure git name
+  when: packages_installed|success
+  command: git config --global user.name {{ git.name }}
+
+- name: configure git email
+  when: packages_installed|success
+  command: git config --global user.email {{ git.email }}
+
+- name: fetch project repository
+  when: packages_installed|success
+  git: repo={{ github.address }} dest={{ git.repo_location }}
+
+- name: install project requirements
+  when: packages_installed|success
+  pip:
+    requirements: {{ pip.requirements_location }}
+    virtualenv: {{ virtualenv.location }}
+    virtualenv_python: python3.4
