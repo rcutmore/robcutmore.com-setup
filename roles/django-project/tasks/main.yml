@@ -23,4 +23,4 @@
   pip:
     requirements: "{{ pip.requirements_location }}"
     virtualenv: "{{ virtualenv.location }}"
-    virtualenv_python: python3.4
+    virtualenv_python: python3
