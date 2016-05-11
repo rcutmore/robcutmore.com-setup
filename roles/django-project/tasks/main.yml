@@ -8,7 +8,7 @@
 
 - name: configure git name
   when: packages_installed|success
-  command: git config --global user.name {{ git.name }}
+  command: git config --global user.name "{{ git.name }}"
 
 - name: configure git email
   when: packages_installed|success
