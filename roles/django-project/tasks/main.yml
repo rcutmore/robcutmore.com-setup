@@ -21,6 +21,6 @@
 - name: install project requirements
   when: packages_installed|success
   pip:
-    requirements: {{ pip.requirements_location }}
-    virtualenv: {{ virtualenv.location }}
+    requirements: "{{ pip.requirements_location }}"
+    virtualenv: "{{ virtualenv.location }}"
     virtualenv_python: python3.4
