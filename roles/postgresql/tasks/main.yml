@@ -12,7 +12,9 @@
 
 - name: create database
   when: postgresql_installed|success
-  sudo_user: postgres
+  become: yes
+  become_method: sudo
+  become_user: postgres
   postgresql_db:
     name={{ db_name }}
     encoding='UTF-8'
@@ -21,7 +23,9 @@
 
 - name: create database user
   when: database_created|success
-  sudo_user: postgres
+  become: yes
+  become_method: sudo
+  become_user: postgres
   postgresql_user:
     db={{ db_name }}
     name={{ db_user }}
