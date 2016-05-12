@@ -6,13 +6,11 @@
     - python-virtualenv
   register: packages_installed
 
-- name: configure git name
+- name: copy git config
   when: packages_installed|success
-  command: git config --global user.name "{{ git.name }}"
-
-- name: configure git email
-  when: packages_installed|success
-  command: git config --global user.email {{ git.email }}
+  become: yes
+  become_user: "{{ project_user }}"
+  template: src=gitconfig dest={{ ansible_env.HOME }}/.gitconfig
 
 - name: fetch project repository
   when: packages_installed|success
