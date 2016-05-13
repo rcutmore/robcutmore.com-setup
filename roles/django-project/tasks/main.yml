@@ -1,10 +1,25 @@
 ---
 - name: install project packages
+  become: yes
+  become_method: sudo
+  become_user: root
   apt: name={{ item }} state=present update_cache=true
   with_items:
     - git
     - python-virtualenv
   register: packages_installed
+
+- name: create project directory
+  become: yes
+  become_method: sudo
+  become_user: root
+  file:
+    path={{ git.repo_location }}
+    state=directory
+    owner={{ project_user }}
+    group={{ project_user }}
+    mode=0755
+  register: directory_created
 
 - name: copy git config
   when: packages_installed|success
@@ -13,11 +28,14 @@
   template: src=gitconfig dest={{ ansible_env.HOME }}/.gitconfig
 
 - name: fetch project repository
-  when: packages_installed|success
+  when: packages_installed|success and directory_created|success
+  become: yes
+  become_method: sudo
+  become_user: "{{ project_user }}"
   git: repo={{ github.address }} dest={{ git.repo_location }}
 
 - name: install project requirements
-  when: packages_installed|success
+  when: packages_installed|success and directory_created|success
   pip:
     requirements: "{{ pip.requirements_location }}"
     virtualenv: "{{ virtualenv.location }}"

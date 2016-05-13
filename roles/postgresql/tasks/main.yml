@@ -1,5 +1,8 @@
 ---
 - name: install postgresql
+  become: yes
+  become_method: sudo
+  become_user: root
   apt: name={{ item }} state=present update_cache=true
   with_items:
     - postgresql
