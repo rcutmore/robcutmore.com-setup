@@ -1,4 +1,4 @@
 ---
-db_user: ENTER USER NAME HERE
-db_password: ENTER PASSWORD HERE
-db_name: ENTER DATABASE NAME HERE
+db_user: enter_db_user_here
+db_password: enter_db_password_here
+db_name: enter_db_name_here
