@@ -6,6 +6,14 @@ The website is currently developed and deployed on Ubuntu.
 
 **Getting Started**
 
+Update Ansible hosts file (*/etc/ansible/hosts*) with target IP addresses:
+
+    [production]
+    Enter production server IP address here
+    
+    [development]
+    127.0.0.1
+
 Clone this repo to your local machine:
 
     git clone https://github.com/rcutmore/robcutmore.com-ansible.git
@@ -26,7 +34,7 @@ Replace variable placeholders:
     :%s/enter_db_name_here/[Replace this with PostgreSQL database name]/g
     :x
 
-To set up a development server:
+Set up development server:
 
     sudo ansible-playbook ./development.yml
 
