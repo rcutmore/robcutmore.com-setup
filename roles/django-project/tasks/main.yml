@@ -25,7 +25,7 @@
   when: packages_installed|success
   become: yes
   become_user: "{{ project_user }}"
-  template: src=gitconfig dest={{ ansible_env.HOME }}/.gitconfig
+  template: src=gitconfig.j2 dest={{ ansible_env.HOME }}/.gitconfig
 
 - name: fetch project repository
   when: packages_installed|success and directory_created|success

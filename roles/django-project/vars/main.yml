@@ -1,7 +1,9 @@
 ---
-project_user: ENTER PROJECT USER HERE
+project_user: enter_project_user_here
 git:
   repo_location: /opt/robcutmore
+  name: enter_git_name_here
+  email: enter_git_email_here
 github:
   address: https://github.com/rcutmore/robcutmore.com.git
 pip:
