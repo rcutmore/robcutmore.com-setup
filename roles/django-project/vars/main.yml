@@ -1,5 +1,4 @@
 ---
-project_user: enter_project_user_here
 git:
   repo_location: /opt/robcutmore
   name: enter_git_name_here
