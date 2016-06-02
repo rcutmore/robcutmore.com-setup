@@ -1,8 +1,12 @@
+**Overview**
+
 This is an Ansible playbook for automating the provisioning of a server for
 hacking on or running the [robcutmore.com](http://www.robcutmore.com) website.
 The website is currently developed and deployed on Ubuntu.
 
-To get started clone this repo to your local machine:
+**Getting Started**
+
+Clone this repo to your local machine:
 
     git clone https://github.com/rcutmore/robcutmore.com-ansible.git
     cd ./robcutmore.com-ansible/
