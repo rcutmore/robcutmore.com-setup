@@ -2,8 +2,6 @@
 - name: Set up development server for robcutmore.com website
   hosts: development
   connection: local
-  remote_user: "{{ project_user }}"
-  sudo: yes 
 
   roles:
     - postgresql
