@@ -5,4 +5,3 @@ locations:
   requirements: /opt/robcutmore/requirements.txt
   static_content: /opt/robcutmore/robcutmore-com/static_final
   virtualenv: /opt/robcutmore/env
-project_user: enter_project_user_here
