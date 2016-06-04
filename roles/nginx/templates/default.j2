@@ -9,7 +9,7 @@ server {
 server {
     listen 80;
     server_name www.robcutmore.com;
-    root /opt/robcutmore/robcutmore-com;
+    root {{ locations.project }};
 
     # Avoid emitting nginx version number in response headers
     server_tokens off;
@@ -34,7 +34,7 @@ server {
 
     # Set location and options for static content
     location /static {
-        alias /opt/robcutmore/robcutmore-com/static_final;
+        alias {{ locations.static_content }};
         expires 1d;
     }
 }

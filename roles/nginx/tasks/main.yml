@@ -15,7 +15,7 @@
 - name: copy nginx configuration
   when: nginx_installed|success
   register: nginx_config_copied
-  template: src=default.conf dest=/etc/nginx/sites-available/robcutmore.com.conf
+  template: src=default.j2 dest=/etc/nginx/sites-available/robcutmore.com.conf
 
 - name: setup nginx sites-enabled symlink
   when: nginx_default_site_disabled|success and nginx_config_copied|success

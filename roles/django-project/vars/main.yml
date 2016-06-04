@@ -1,11 +1,6 @@
 ---
 git:
-  repo_location: /opt/robcutmore
   name: enter_git_name_here
   email: enter_git_email_here
 github:
   address: https://github.com/rcutmore/robcutmore.com.git
-pip:
-  requirements_location: /opt/robcutmore/requirements.txt
-virtualenv:
-  location: /opt/robcutmore/env
