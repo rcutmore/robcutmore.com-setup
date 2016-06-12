@@ -1,7 +1,17 @@
 ---
+database:
+  engine: enter_db_engine_here
+  host: enter_db_host_here
+  name: enter_db_name_here
+  password: enter_db_password_here
+  port: enter_db_port_here
+  user: enter_db_user_here
 locations:
   project: /opt/robcutmore/robcutmore-com
   repo: /opt/robcutmore
   requirements: /opt/robcutmore/requirements.txt
+  settings: /etc/robcutmore
+  settings_file: /etc/robcutmore/settings.ini
   static_content: /opt/robcutmore/robcutmore-com/static_final
   virtualenv: /opt/robcutmore/env
+

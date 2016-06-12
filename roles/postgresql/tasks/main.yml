@@ -19,7 +19,7 @@
   become_method: sudo
   become_user: postgres
   postgresql_db:
-    name={{ db_name }}
+    name={{ database.name }}
     encoding='UTF-8'
     state=present
   register: database_created
@@ -30,8 +30,8 @@
   become_method: sudo
   become_user: postgres
   postgresql_user:
-    db={{ db_name }}
-    name={{ db_user }}
-    password={{ db_password }}
+    db={{ database.name }}
+    name={{ database.user }}
+    password={{ database.password }}
     priv=ALL
     state=present

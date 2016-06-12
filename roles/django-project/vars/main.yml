@@ -1,7 +1,12 @@
 ---
+django:
+  debug: enter_django_debug_here
+  secret_key: enter_django_secret_key_here
+  template_debug: enter_django_template_debug_here
 git:
   name: enter_git_name_here
   email: enter_git_email_here
 github:
   address: https://github.com/rcutmore/robcutmore.com.git
 project_user: enter_project_user_here
+

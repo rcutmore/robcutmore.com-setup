@@ -1,0 +1,13 @@
+[project]
+SECRET_KEY: {{ django.secret_key }}
+DEBUG: {{ django.debug }}
+TEMPLATE_DEBUG: {{ django.template_debug }}
+ 
+[database]
+DATABASE_ENGINE: {{ database.engine }}
+DATABASE_USER: {{ database.user }}
+DATABASE_PASSWORD: {{ database.password }}
+DATABASE_NAME: {{ database.name }}
+DATABASE_HOST: {{ database.host }}
+DATABASE_PORT: {{ database.port }}
+
