@@ -19,7 +19,7 @@ Clone this repo to your local machine:
     git clone https://github.com/rcutmore/robcutmore.com-ansible.git
     cd ./robcutmore.com-ansible/
 
-Replace variable placeholders:
+Replace variable placeholders (*[...]*'s):
 
     vi ./group_vars/all
     :%s/enter_db_engine_here/[Replace this with database engine]/g
