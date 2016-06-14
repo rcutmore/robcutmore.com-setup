@@ -58,4 +58,12 @@
   become: yes
   become_user: "{{ project_user }}"
   template: src=settings.j2 dest={{ locations.settings_file }}
+  register: project_settings_copied
+
+- name: run database migrations
+  when: project_settings_copied|success
+  django_manage:
+    command=migrate
+    app_path={{ locations.project }}
+    virtualenv={{ locations.virtualenv }}
 
