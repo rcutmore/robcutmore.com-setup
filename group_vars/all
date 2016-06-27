@@ -7,6 +7,7 @@ database:
   port: enter_db_port_here
   user: enter_db_user_here
 locations:
+  gunicorn_settings_file: /etc/robcutmore/gunicorn.py
   project: /opt/robcutmore/robcutmore-com
   repo: /opt/robcutmore
   requirements: /opt/robcutmore/requirements.txt

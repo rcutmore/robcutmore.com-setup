@@ -1,0 +1,6 @@
+command = "{{ locations.virtualenv }}/bin/gunicorn"
+pythonpath = "{{ locations.project }}"
+bind = "127.0.0.1:8001"
+workers = 1
+user = "{{ project_user }}"
+
