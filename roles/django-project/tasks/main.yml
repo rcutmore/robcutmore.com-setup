@@ -67,6 +67,13 @@
     app_path={{ locations.project }}
     virtualenv={{ locations.virtualenv }}
 
+- name: collect static files
+  when: project_settings_copied|success
+  django_manage:
+    command=collectstatic
+    app_path={{ locations.project }}
+    virtualenv={{ locations.virtualenv }}
+
 - name: copy gunicorn settings
   when: settings_directory_created|success
   become: yes
