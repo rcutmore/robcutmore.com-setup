@@ -1,7 +1,6 @@
 ---
 - name: Set up development server for robcutmore.com website
-  hosts: development
-  connection: local
+  hosts: localhost
 
   roles:
     - postgresql

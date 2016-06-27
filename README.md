@@ -10,9 +10,6 @@ Update Ansible hosts file (*/etc/ansible/hosts*) with target IP addresses:
 
     [production]
     Enter production server IP address here
-    
-    [development]
-    127.0.0.1
 
 Clone this repo to your local machine:
 
