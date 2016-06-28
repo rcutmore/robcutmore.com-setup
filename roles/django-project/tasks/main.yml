@@ -69,6 +69,18 @@
     dest={{ locations.gunicorn_settings_file }}
   register: gunicorn_settings_copied
 
+- name: copy start server script
+  become: yes
+  become_method: sudo
+  become_user: root
+  template:
+    src=robcutmore.com-start-server.j2
+    dest=/usr/local/bin/robcutmore.com-start-server.sh
+    owner={{ project_user }}
+    group={{ project_user }}
+    mode=0755
+  register: start_server_script_copied
+
 - name: run database migrations
   when: project_settings_copied|success
   django_manage:
