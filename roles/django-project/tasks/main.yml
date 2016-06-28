@@ -64,7 +64,9 @@
   when: settings_directory_created|success
   become: yes
   become_user: "{{ project_user }}"
-  template: src=gunicorn.j2 dest={{ locations.gunicorn_settings_file }}
+  template:
+    src=gunicorn-config.j2
+    dest={{ locations.gunicorn_settings_file }}
   register: gunicorn_settings_copied
 
 - name: run database migrations
