@@ -74,7 +74,7 @@
   become_method: sudo
   become_user: root
   template:
-    src=robcutmore.com-start-server.j2
+    src=start-server.j2
     dest=/usr/local/bin/robcutmore.com-start-server.sh
     owner={{ project_user }}
     group={{ project_user }}
