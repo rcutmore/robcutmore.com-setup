@@ -75,7 +75,7 @@
   become_user: root
   template:
     src=start-server.j2
-    dest=/usr/local/bin/robcutmore.com-start-server.sh
+    dest={{ locations.start_server_script }}
     owner={{ project_user }}
     group={{ project_user }}
     mode=0755

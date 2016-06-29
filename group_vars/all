@@ -13,6 +13,7 @@ locations:
   requirements: /opt/robcutmore/requirements.txt
   settings: /etc/robcutmore
   settings_file: /etc/robcutmore/settings.ini
+  start_server_script: /usr/local/bin/robcutmore.com-start-server.sh
   static_content: /opt/robcutmore/robcutmore-com/static_final
   virtualenv: /opt/robcutmore/env
 
