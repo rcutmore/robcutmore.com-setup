@@ -1,0 +1,5 @@
+---
+- name: copy unit file
+  template: src=systemd.j2 dest={{ locations.systemd_unit_file }}
+  notify: start service
+

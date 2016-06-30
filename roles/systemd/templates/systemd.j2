@@ -1,0 +1,11 @@
+[Unit]
+Description=Start server for robcutmore.com website
+After=network.target
+
+[Service]
+User={{ project_user }}
+ExecStart={{ locations.virtualenv }}/bin/gunicorn --config={{ locations.gunicorn_settings_file }} mysite.wsgi
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+---
+- name: start service
+  service: name=robcutmore.service state=started enabled=yes
+

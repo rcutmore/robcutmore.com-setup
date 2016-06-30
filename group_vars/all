@@ -15,5 +15,6 @@ locations:
   settings_file: /etc/robcutmore/settings.ini
   start_server_script: /usr/local/bin/robcutmore.com-start-server.sh
   static_content: /opt/robcutmore/robcutmore-com/static_final
+  systemd_unit_file: /etc/systemd/system/robcutmore.service
   virtualenv: /opt/robcutmore/env
 

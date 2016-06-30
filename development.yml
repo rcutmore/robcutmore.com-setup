@@ -6,4 +6,5 @@
     - postgresql
     - nginx
     - django-project
+    - systemd
 
