@@ -60,15 +60,6 @@
   template: src=settings.j2 dest={{ locations.settings_file }}
   register: project_settings_copied
 
-- name: copy gunicorn settings
-  when: settings_directory_created|success
-  become: yes
-  become_user: "{{ project_user }}"
-  template:
-    src=gunicorn-config.j2
-    dest={{ locations.gunicorn_settings_file }}
-  register: gunicorn_settings_copied
-
 - name: run database migrations
   when: project_settings_copied|success
   django_manage:
@@ -82,4 +73,18 @@
     command=collectstatic
     app_path={{ locations.project }}
     virtualenv={{ locations.virtualenv }}
+
+- name: copy gunicorn settings
+  when: settings_directory_created|success
+  become: yes
+  become_user: "{{ project_user }}"
+  template:
+    src=gunicorn-config.j2
+    dest={{ locations.gunicorn_settings_file }}
+  register: gunicorn_settings_copied
+
+- name: copy systemd unit file
+  when: gunicorn_settings_copied|success
+  template: src=systemd.j2 dest={{ locations.systemd_unit_file }}
+  notify: start gunicorn server
 

@@ -1,4 +1,4 @@
 ---
-- name: start service
+- name: start gunicorn server
   service: name=robcutmore.service state=started enabled=yes
 

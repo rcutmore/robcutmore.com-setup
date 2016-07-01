@@ -4,7 +4,6 @@
 
   roles:
     - postgresql
-    - nginx
     - django-project
-    - systemd
+    - nginx
 
