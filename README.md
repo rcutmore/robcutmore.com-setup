@@ -29,7 +29,6 @@ Replace variable placeholders (*[...]*'s):
     vi ./roles/django-project/vars/main.yml
     :%s/enter_django_debug_here/[Replace this with Django debug state (True or False)]/g
     :%s/enter_django_secret_key_here/[Replace this with Django secret key]/g
-    :%s/enter_django_template_debug_here/[Replace this with Django template debug state (True or False)]/g
     :%s/enter_git_name_here/[Replace this with Git name]/g
     :%s/enter_git_email_here/[Replace this with Git email]/g
     :%s/enter_project_user_here/[Replace this with OS user]/g
