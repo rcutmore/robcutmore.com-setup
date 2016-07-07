@@ -34,4 +34,6 @@
     name={{ database.user }}
     password={{ database.password }}
     priv=ALL
+    role_attr_flags=CREATEDB
     state=present
+
