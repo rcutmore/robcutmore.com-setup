@@ -36,6 +36,8 @@
 
 - name: install project requirements
   when: packages_installed|success and project_directory_created|success
+  become: yes
+  become_user: "{{ project_user }}"
   pip:
     requirements: "{{ locations.requirements }}"
     virtualenv: "{{ locations.virtualenv }}"
