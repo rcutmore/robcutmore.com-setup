@@ -15,5 +15,5 @@ locations:
   settings_file: /etc/robcutmore/settings.ini
   static_content: /opt/robcutmore/robcutmore-com/static_final
   systemd_unit_file: /etc/systemd/system/robcutmore.service
-  virtualenv: /opt/robcutmore/env
+  virtualenv: /opt/robcutmore/.env
 
