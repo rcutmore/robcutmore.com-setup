@@ -1,0 +1,9 @@
+---
+- name: Set up production server for robcutmore.com website
+  hosts: production
+
+  roles:
+    - postgresql
+    - django-project
+    - nginx
+
