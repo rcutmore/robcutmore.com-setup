@@ -1,0 +1,11 @@
+---
+- name: add entry to /etc/hosts
+  become: yes
+  become_method: sudo
+  become_user: root
+  lineinfile:
+    dest=/etc/hosts
+    insertafter="127\.0\.0\.1\slocalhost"
+    line="127.0.0.1 www.robcutmore.com"
+    state=present
+
