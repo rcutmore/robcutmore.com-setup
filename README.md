@@ -34,7 +34,11 @@ Replace variable placeholders (*[...]*'s):
     :%s/enter_project_user_here/[Replace this with OS user]/g
     :x
 
-Set up development server:
+To set up development server:
 
     sudo ansible-playbook ./development.yml
+
+To set up production server:
+
+    sudo ansible-playbook ./production.yml
 
