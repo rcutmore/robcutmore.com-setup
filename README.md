@@ -6,6 +6,10 @@ The website is currently developed and deployed on Ubuntu.
 
 **Getting Started**
 
+Install Ansible:
+
+    sudo apt install ansible
+
 Update Ansible hosts file (*/etc/ansible/hosts*) with target IP addresses:
 
     [production]
@@ -36,9 +40,9 @@ Replace variable placeholders (*[...]*'s):
 
 To set up development server:
 
-    sudo ansible-playbook ./development.yml
+    ansible-playbook --ask-become-pass ./development.yml
 
 To set up production server:
 
-    sudo ansible-playbook ./production.yml
+    ansible-playbook --ask-become-pass ./production.yml
 
