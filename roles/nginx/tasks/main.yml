@@ -9,18 +9,28 @@
 
 - name: remove default site from nginx sites-enabled
   when: nginx_installed|success
+  become: yes
+  become_method: sudo
+  become_user: root
   register: nginx_default_site_disabled
   file: dest=/etc/nginx/sites-enabled/default state=absent
 
 - name: copy nginx configuration
   when: nginx_installed|success
-  register: nginx_config_copied
+  become: yes
+  become_method: sudo
+  become_user: root
   template: src=default.j2 dest=/etc/nginx/sites-available/robcutmore.com.conf
+  register: nginx_config_copied
 
 - name: setup nginx sites-enabled symlink
   when: nginx_default_site_disabled|success and nginx_config_copied|success
+  become: yes
+  become_method: sudo
+  become_user: root
   file: path=/etc/nginx/sites-enabled/robcutmore.com.conf
         src=/etc/nginx/sites-available/robcutmore.com.conf
         state=link
         force=yes
   notify: reload nginx
+

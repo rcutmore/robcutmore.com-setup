@@ -88,6 +88,9 @@
 
 - name: copy systemd unit file
   when: gunicorn_settings_copied|success
+  become: yes
+  become_method: sudo
+  become_user: root
   template: src=systemd.j2 dest={{ locations.systemd_unit_file }}
   notify: start gunicorn server
 
