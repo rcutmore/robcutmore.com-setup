@@ -1,4 +1,7 @@
 ---
 - name: start gunicorn server
+  become: yes
+  become_method: sudo
+  become_user: root
   service: name=robcutmore.service state=started enabled=yes
 
